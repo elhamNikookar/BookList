@@ -1,0 +1,40 @@
+﻿
+<div class="col-12 border p-3 mt-3">
+    <form method="post">
+        @if (Model.Books.Any())
+        {
+            <table class="table table-striped border">
+                <tr class="table-secondary">
+                    <th>
+                        @*<label asp-for="Books.FirstOrDefault().Name"></label>*@
+                        Name
+                    </th>
+                    <th>
+                        <label asp-for="Books.FirstOrDefault().Author"></label>
+                    </th>
+                    <th>
+                        <label asp-for="Books.FirstOrDefault().ISBN"></label>
+                    </th>
+                    <th></th>
+                </tr>
+                @foreach (var item in Model.Books)
+                {
+                    <tr>
+                        <td>@item.Title</td>
+                        <td>@item.Author</td>
+                        <td>@item.ISBN</td>
+                        <td>
+                            <a asp-page="Edit" asp-route-id="@item.ID" class="btn btn-warning btn-sm">Edit</a>
+                            <a asp-page-handler="Delete" asp-route-id="@item.ID" onclick="return confirm('Are you sure you want to delete?') class="btn btn-danger btn-sm">Delete</a>
+
+                        </td>
+                    </tr>
+                }
+            </table>
+        }
+        else
+        {
+            <p>No books available.</p>
+        }
+    </form>
+</div>
