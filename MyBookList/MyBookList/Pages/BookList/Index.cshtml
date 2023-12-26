@@ -51,15 +51,15 @@
                     "datatype": "json"
                 },
                 "columns": [
-                    { "data": "title", "width": "30%" },
-                    { "data": "author", "width": "30%" },
-                    { "data": "isbn", "width": "30%" },
+                    { "data": "title", "width": "27%" },
+                    { "data": "author", "width": "28%" },
+                    { "data": "isbn", "width": "25%" },
                     {
                         "data": "id",
                         "render": function (data) {
                             return `<div class="text-center">
-            <a href="/BookList/Upsert?id=${data}" class="btn btn-success text-white" style="cursor:pointer;width=100px !important;">Edit</a>
-<a class="btn btn-danger text-white" style="cursor:pointer;width=100px !important;" onclick="Delete('/api/book?id='+${data})">Delete</a>
+            <a href="/BookList/Upsert?id=${data}" class="btn btn-success text-white" style="cursor:pointer;width=120px !important;">Edit</a>
+<a class="btn btn-danger text-white" style="cursor:pointer;width=120px !important;" onclick="Delete('/api/book?id='+${data})">Delete</a>
 </div>`;
                         }, "width": "30%"
                     }

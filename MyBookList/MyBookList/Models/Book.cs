@@ -7,7 +7,7 @@ namespace MyBookList.Models
         [Key]
         public int ID { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Enter Title")]
         [MaxLength(200)]
         public string Title { get; set; }
 
